@@ -1,5 +1,5 @@
 students: main.o date.o address.o student.o
-		g++ -g main.o date.o address.o -o students
+		g++ -g main.o date.o address.o student.o -o students
 
 main.o: main.cpp date.h address.h student.h
 		g++ -g -c main.cpp
@@ -17,11 +17,10 @@ run: students
 		./students
 
 clean:
-		rm students
-		rm *.o
+		rm -f students *.o
 
 debug: students
 		gdb students
 
 valgrind: students
-		valgrind --leak-check#=full ./students
+		valgrind --leak-check=full ./students

@@ -98,18 +98,20 @@ void printStudents(std::vector<Student*>& students){
 
 void findStudent(std::vector<Student*>& students){
 
-  std::string search;
+    std::string searchName;
 
-  std::cout << "last name of student: ";
-  std::cin >> search;
+    std::cout << "last name of student: ";
+    getline(std::cin, searchName);
 
-  for(Student* student : students){
+    for (Student* student : students){
 
-    if(student->getLastName().find(search) != std::string::npos){
-      student->printStudent();
+        std::string lastName = student->getLastName();
+
+        if (lastName.find(searchName) != std::string::npos){
+            student->printStudent();
+        }
+
     }
-
-  }
 
 } // end findStudent
 

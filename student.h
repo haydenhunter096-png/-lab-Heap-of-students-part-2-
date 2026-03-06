@@ -20,10 +20,10 @@ class Student {
     ~Student();
     void init(std::string studentString);
     void printStudent();
-    std::string getLastFirst()
-    std::string getLastName()
+    std::string getLastFirst();
+    std::string getLastName();
     std::string getFirstName();
-    int get CreditHours();
+    int getCreditHours();
 
 
 }; // end class Student
