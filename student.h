@@ -5,11 +5,27 @@
 #include "address.h"
 #include <string>
 
-class Student{
-private:
+class Student {
+  private:
+    std::string firstName;
+    std::string lastName;
+    Address* address;
+    Date* birthDate;
+    Date* gradDate;
+    int creditHours;
 
 
-public:
+  public:
+    Student();
+    ~Student();
+    void init(std::string studentString);
+    void printStudent();
+    std::string getLastFirst()
+    std::string getLastName()
+    std::string getFirstName();
+    int get CreditHours();
 
 
 }; // end class Student
+
+#endif
