@@ -1,9 +1,8 @@
-# -lab-Heap-of-students-part-2-# 
+# Heap of Students – Part 2
 
 ## UML
 
 ```mermaid
-
 classDiagram
 
 class Student{
@@ -40,5 +39,3 @@ class Date{
 
 Student --> Address
 Student --> Date
-
-```
