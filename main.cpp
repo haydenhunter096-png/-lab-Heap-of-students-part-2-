@@ -2,6 +2,7 @@
 #include <vector>
 #include <fstream>
 #include <algorithm>
+#include <limits>
 
 #include "date.h"
 #include "address.h"
@@ -145,25 +146,6 @@ void delStudents(std::vector<Student*>& students){
 
 } // end delStudents
 
-
-
-std::string menu(){
-
-  std::string choice;
-
-  std::cout << std::endl;
-  std::cout << "0) quit" << std::endl;
-  std::cout << "1) print all student names" << std::endl;
-  std::cout << "2) print all student data" << std::endl;
-  std::cout << "3) find a student" << std::endl;
-  std::cout << std::endl;
-
-  std::cout << "please choose 0-3: ";
-  std::cin >> choice;
-
-  return choice;
-
-} // end menu
 
 
 
