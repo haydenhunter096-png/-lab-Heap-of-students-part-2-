@@ -54,23 +54,41 @@ int main(){
 } // end main
 
 
+std::string menu(){
+
+  std::string choice;
+
+  std::cout << std::endl;
+  std::cout << "0) quit" << std::endl;
+  std::cout << "1) print all student names" << std::endl;
+  std::cout << "2) print all student data" << std::endl;
+  std::cout << "3) find a student" << std::endl;
+  std::cout << std::endl;
+
+  std::cout << "please choose 0-3: ";
+  std::cin >> choice;
+  std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // flush newline
+
+  return choice;
+
+} // end menu
+
 
 void loadStudents(std::vector<Student*>& students){
 
-  std::ifstream inFile;
+  std::ifstream inFile("students.csv");
+  if(!inFile){
+      std::cerr << "Error: Could not open students.csv\n";
+      return;
+  }
+
   std::string currentLine;
-
-  inFile.open("students.csv");
-
   while(getline(inFile, currentLine)){
-
+    if(currentLine.empty()) continue; // skip empty lines
     Student* s = new Student();
     s->init(currentLine);
     students.push_back(s);
-
   }
-
-  inFile.close();
 
 } // end loadStudents
 
